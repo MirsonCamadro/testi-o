@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <div class="card" style="width: 18rem;">
+      <% if post.image_url.present? %>
+        <%= image_tag post.image_url %> 
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= post.title%></h5>
+        <p class="card-text"><%= post.content%></p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <p>
+      <%= link_to "Show this post", post %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New post", new_post_path %>
