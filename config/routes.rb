@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tastes
   resources :posts
 
   get 'posts', to: 'posts#index'
